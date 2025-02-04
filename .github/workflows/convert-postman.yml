@@ -25,7 +25,7 @@ jobs:
       run: npm install -g postman-to-openapi
 
     - name: Convert Postman to OpenAPI
-      run: p2o PostmantoCollection.json -f result.yml
+      run: p2o "Morningstar Direct Web Services.postman_collection.json" -f result.yml
 
     - name: Upload result.yml
       uses: actions/upload-artifact@v4

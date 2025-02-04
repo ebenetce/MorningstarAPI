@@ -1,0 +1,34 @@
+name: Convert Postman to OpenAPI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  convert:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '16' # Specify the Node.js version you want to use
+
+    - name: Install postman-to-openapi
+      run: npm install -g postman-to-openapi
+
+    - name: Convert Postman to OpenAPI
+      run: p2o PostmantoCollection.json -f result.yml
+
+    - name: Upload result.yml
+      uses: actions/upload-artifact@v4
+      with:
+        name: openapi-spec
+        path: morningstar.yml

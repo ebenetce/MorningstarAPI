@@ -22,7 +22,7 @@ jobs:
         node-version: '16' # Specify the Node.js version you want to use
 
     - name: Install postman-to-openapi
-      run: npm install -g postman-to-openapi
+      run: npm install @scalar/postman-to-openapi
 
     - name: Convert Postman to OpenAPI
       run: p2o "Morningstar Direct Web Services.postman_collection.json" -f result.yml

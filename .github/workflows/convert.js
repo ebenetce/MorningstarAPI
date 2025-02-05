@@ -10,7 +10,7 @@ async function convertPostmanToOpenAPI() {
     const result = await convert(JSON.parse(postmanCollection));
 
     // Output the result to a file
-    await fs.writeFile('result.yml', result, 'utf-8');
+    await fs.writeFile('morningstar.yml', result, 'utf-8');
 
     console.log('Conversion successful!');
   } catch (error) {

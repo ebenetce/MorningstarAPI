@@ -70,4 +70,4 @@ jobs:
           mvn -q clean package
 
       - name: 
-        run: npx @openapitools/openapi-generator-cli --custom-generator MATLAB/lib/jar/MATLABClientCodegen-openapi-generator-0.0.1.jar generate -g MATLAB -i morningstar.yaml -o MorningstarMATLABAPI --package-name MorningstarMATLABAPI
+        run: npx @openapitools/openapi-generator-cli --custom-generator MATLAB/lib/jar/MATLABClientCodegen-openapi-generator-0.0.1.jar generate -g MATLAB -i morningstar.yml -o MorningstarMATLABAPI --package-name MorningstarMATLABAPI

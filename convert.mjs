@@ -3,7 +3,7 @@ import { convert } from '@scalar/postman-to-openapi';
 async function convertPostmanToOpenAPI() {
 
   try {
-    const result = await convert('PostmantoCollection.json');
+    const result = await convert('Morningstar Direct Web Services.postman_collection.json');
     console.log(result)
     console.log('Conversion successful!');
 

@@ -30,7 +30,7 @@ jobs:
     - name: Convert Postman to OpenAPI
       run: node convert.mjs
 
-    - name: Upload result.yml
+    - name: Upload morningstar.yml
       uses: actions/upload-artifact@v4
       with:
         name: openapi-spec

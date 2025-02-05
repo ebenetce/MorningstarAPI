@@ -8,13 +8,16 @@ async function convertPostmanToOpenAPI() {
   try {
     // Read the Postman collection file
     const postmanCollection = await fs.readFile('Morningstar Direct Web Services.postman_collection.json', 'utf-8');
+
+    // Convert the Postman collection to OpenAPI
     const result = await convert(JSON.parse(postmanCollection));
-    console.log(result)
     console.log('Conversion successful!');
 
+    // Convert the OpenAPI object to a YAML string
     const yamlString = yaml.dump(result);
-    await fs.writeFile('morningstar2.yml', yamlString, 'utf-8');
-    
+
+    // Output the result to a file
+    await fs.writeFile('morningstar.yml', yamlString, 'utf-8');    
 
   } catch (error) {
 

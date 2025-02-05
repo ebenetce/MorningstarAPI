@@ -11,7 +11,6 @@ async function convertPostmanToOpenAPI() {
     const result = await convert(JSON.parse(postmanCollection));
     console.log(result)
     console.log('Conversion successful!');
-    await fs.writeFile('morningstar.yml', result, 'utf-8');
 
     const yamlString = yaml.dump(result);
     await fs.writeFile('morningstar2.yml', yamlString, 'utf-8');

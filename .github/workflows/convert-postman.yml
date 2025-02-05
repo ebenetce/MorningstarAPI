@@ -25,7 +25,7 @@ jobs:
       run: npm install @scalar/postman-to-openapi
 
     - name: Convert Postman to OpenAPI
-      run: node convert.js
+      run: node convert.mjs
 
     - name: Upload result.yml
       uses: actions/upload-artifact@v4

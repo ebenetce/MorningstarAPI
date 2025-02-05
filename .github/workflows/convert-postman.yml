@@ -52,15 +52,7 @@ jobs:
           java-version: '11'
           cache: 'maven'
 
-      - name: Set up Maven
-        uses: actions/setup-java@v3
-        with:
-          distribution: 'adopt'
-          java-version: '11'
-          cache: 'maven'
-     
       - name: Run Maven Package
         run: |
-          ls
           cd Software/Java
-          mvn clean package
+          mvn -q clean package

@@ -24,6 +24,9 @@ jobs:
     - name: Install postman-to-openapi
       run: npm install @scalar/postman-to-openapi
 
+    - name: Install js-yaml
+      run: npm install js-yaml
+
     - name: Convert Postman to OpenAPI
       run: node convert.mjs
 

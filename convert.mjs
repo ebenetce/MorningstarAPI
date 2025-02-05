@@ -1,14 +1,21 @@
+// convert.mjs
 import { promises as fs } from 'fs';
 import { convert } from '@scalar/postman-to-openapi';
+import yaml from 'js-yaml';
 
 async function convertPostmanToOpenAPI() {
 
   try {
+    // Read the Postman collection file
     const postmanCollection = await fs.readFile('Morningstar Direct Web Services.postman_collection.json', 'utf-8');
-    const result = await convert(postmanCollection);
-    await fs.writeFile('result.yml', result, 'utf-8');
+    const result = await convert(JSON.parse(postmanCollection));
     console.log(result)
     console.log('Conversion successful!');
+    await fs.writeFile('morningstar.yml', result, 'utf-8');
+
+    const yamlString = yaml.dump(result);
+    await fs.writeFile('morningstar2.yml', yamlString, 'utf-8');
+    
 
   } catch (error) {
 

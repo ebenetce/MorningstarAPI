@@ -51,7 +51,7 @@ jobs:
       - name: Generate API
         run: |
           cd external-repo/Software
-          npx @openapitools/openapi-generator-cli --custom-generator MATLAB/lib/jar/MATLABClientCodegen-openapi-generator-0.0.1.jar generate -g MATLAB -i current-repo/${{ env.OPENAPI_SPEC }} -o ${{ env.PACKAGE_NAME }} --package-name ${{ env.PACKAGE_NAME }} -p AddOAuth=auth
+          npx @openapitools/openapi-generator-cli --custom-generator MATLAB/lib/jar/MATLABClientCodegen-openapi-generator-0.0.1.jar generate -g MATLAB -i $GITHUB_WORKSPACE/current-repo/${{ env.OPENAPI_SPEC }} -o ${{ env.PACKAGE_NAME }} --package-name ${{ env.PACKAGE_NAME }} -p AddOAuth=auth
 
       - name: Configure Git
         run: |    

@@ -40,6 +40,9 @@ jobs:
           java-version: '11'
           cache: 'maven'
 
+      - name: List files for debugging
+        run: ls -al current-repo
+
       - name: Run Maven Package
         run: |
           cd external-repo/Software/Java

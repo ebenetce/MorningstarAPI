@@ -7,8 +7,8 @@ on:
     - cron: '0 0 1 * *'
 
 env:
-  PACKAGE_NAME: macrobond
-  OPENAPI_SPEC: https://api.macrobondfinancial.com/swagger/v1/swagger.json
+  PACKAGE_NAME: morningstar
+  OPENAPI_SPEC: morningstarOpenApi.json
 
 jobs:
   process-yaml:

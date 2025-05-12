@@ -58,6 +58,7 @@ jobs:
       - name: Generate API
         run: |
           cd external-repo/Software
+          JAVA_OPTS="-Dio.swagger.parser.util.Yaml.mapper.maxYamlCodePoints=99999999"
           npx @openapitools/openapi-generator-cli --custom-generator MATLAB/lib/jar/MATLABClientCodegen-openapi-generator-0.0.1.jar generate -g MATLAB -i $GITHUB_WORKSPACE/current-repo/openapi.yaml -o ${{ env.PACKAGE_NAME }} --package-name ${{ env.PACKAGE_NAME }} -p AddOAuth=auth
 
       - name: Configure Git

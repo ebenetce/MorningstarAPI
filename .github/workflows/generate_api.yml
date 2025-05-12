@@ -42,7 +42,7 @@ jobs:
 
       - name: Create openAPI spec
         run: |
-          npm install postman2openapi
+          npm install -g postman2openapi
           postman2openapi $GITHUB_WORKSPACE/current-repo/${{ env.OPENAPI_SPEC }} > openapi.yaml
 
       - name: Run Maven Package

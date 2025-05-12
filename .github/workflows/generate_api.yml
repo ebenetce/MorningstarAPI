@@ -37,8 +37,6 @@ jobs:
         uses:  actions-rs/toolchain@v1
         with:
           toolchain: 'stable'
-        run: |
-          cargo install postman2openapi-cli
 
       - name: Set up JDK 11
         uses: actions/setup-java@v4
@@ -49,6 +47,7 @@ jobs:
 
       - name: Create openAPI spec
         run: |
+          cargo install postman2openapi-cli
           postman2openapi $GITHUB_WORKSPACE/current-repo/${{ env.OPENAPI_SPEC }} > openapi.yaml
 
       - name: Run Maven Package

@@ -37,7 +37,8 @@ jobs:
         uses:  actions-rs/toolchain@v1
         with:
           toolchain: 'stable'
-          components: postman2openapi-cli
+        run: |
+          cargo install postman2openapi-cli
 
       - name: Set up JDK 11
         uses: actions/setup-java@v4

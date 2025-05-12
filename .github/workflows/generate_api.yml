@@ -48,7 +48,7 @@ jobs:
       - name: Create openAPI spec
         run: |
           cargo install postman2openapi-cli
-          postman2openapi $GITHUB_WORKSPACE/current-repo/${{ env.OPENAPI_SPEC }} > openapi.yaml
+          postman2openapi $GITHUB_WORKSPACE/current-repo/${{ env.OPENAPI_SPEC }} > $GITHUB_WORKSPACE/current-repo/openapi.yaml
 
       - name: Run Maven Package
         run: |

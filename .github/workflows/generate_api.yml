@@ -40,8 +40,10 @@ jobs:
           java-version: '11'
           cache: 'maven'
 
-      - name: List files for debugging
-        run: ls -al current-repo
+      - name: Create openAPI spec
+        run: |
+          npm install postman2openapi
+          postman2openapi $GITHUB_WORKSPACE/current-repo/${{ env.OPENAPI_SPEC }} > openapi.yaml
 
       - name: Run Maven Package
         run: |
